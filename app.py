@@ -5,8 +5,19 @@ st.title("🌀 Personality Fusion Portal")
 
 # Create a form for inputs
 with st.form("personality_form"):
-    # Inputs
-    mbti = st.selectbox("Select your MBTI type", ["", "INTJ", "INFP", "ENTP", "ISFJ", "ENFP", "ESTJ", "ISTP", "INFJ"])
+    # MBTI 
+    mbti_types = [
+        "",  # Allow empty
+        "INTJ", "INTP", "ENTJ", "ENTP",
+        "INFJ", "INFP", "ENFJ", "ENFP",
+        "ISTJ", "ISFJ", "ESTJ", "ESFJ",
+        "ISTP", "ISFP", "ESTP", "ESFP"
+    ]
+
+    mbti = st.selectbox(
+        "Select your MBTI type", 
+        mbti_types
+    )
     
     # Inputs for Big Five traits (OCEAN model)
     st.markdown("### Big Five Personality Traits")
